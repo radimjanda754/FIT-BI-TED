@@ -1,0 +1,121 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+
+\title{Co všechno dokáže \LaTeX}
+\author{Radim Janda}
+\date{21.5.2014}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Účelem tohoto textu je demonstrovat možnosti programu \LaTeX{}.
+\end{abstract}
+
+Tento text byl vytvořen jako domácí cvičení pro předmět \href{http://edux.fit.cvut.cz/courses/BI-TED/}{BI-TED} na FIT ČVUT v~Praze.
+
+\section{Obecně o \LaTeX}
+LaTeX je typografickým systémem, který je určen k sazbě vědeckých a matematických dokumentů vysoké typografické kvality. Systém je rovněž vhodný pro tvorbu všech možných druhu jiných dokumentu, od jednoduchých dopisu po složité knihy. Systém LaTeX je postaven na typografickém formátovacím programu TeX \cite{LaTeX}.
+
+\section{Možnosti sázení textu}
+LaTeX má opravdu široké možnosti sázení textu, ty nejpodstatnější možnosti budou znázorněny v následujících odrážkách.
+
+\begin{enumerate}
+\item{Sazba kódu}
+
+Kód lze sázet velice snadno, například za použití balíku \textit{listings} můžeme takto vložit kód tohoto jednoduchého řadícího algoritmu \cite{Bubble}.
+
+\lstset{language=C++}
+\begin{lstlisting}
+void bubbleSort(int * array, int size){
+ for(int i = 0; i < size - 1; i++){
+  for(int j = 0; j < size - i - 1; j++)	{
+   if(array[j+1] < array[j]){
+    int tmp = array[j + 1];
+    array[j + 1] = array[j];
+    array[j] = tmp;
+   }  
+  }  
+ }  
+}    
+\end{lstlisting}
+
+\item{Matematické formule}
+
+Zde lze vidět, jak LaTeX dokáže formulovat matematické formule, není ani nutné přidávání dalších speciálních matematických knihoven.
+
+	\[
+		\textit{X}=\frac{\frac{1}{12}+\frac{1}{12+25}}{2*3+45}+\cos^2\theta-\sin^2\theta+10*\Pi+\lfloor\log_\varphi(\textit{A}*\cdot\sqrt{12}+\frac{1}{2})\rfloor
+	\]
+
+\item{Možnosti písma}
+
+Styl a druh písma lze samozřejmě libovolně měnit. Zde lze vidět například ukázku změny velikosti.
+
+{\tiny Malé písmo}
+
+{\footnotesize Střední písmo}
+
+{\Large Velké písmo}
+
+\item{Další možnosti}
+
+LaTeX má samozřejmě i řady dalších možností co se týče sázení textu, jako jsou klasické typu odsazovaní textu nebo dodatečné vylepšení, které získáme přidáním požadované knihovny.
+
+\end{enumerate}
+
+\section{Grafické zobrazení \LaTeX u}
+\subsection{Tabulky}
+V LaTeXu se dají zobrazovat i jednoduché či složité tabulky. Zobrazení tabulek má široké spektrum možností, například lze libovolně vkládat oddělovací čáry. Opět přikládám jednoduchou ukázku.
+
+\begin{center}
+  \begin{tabular}{| l || c | c | c |}
+    \hline
+    Číslo & Na druhou & Na třetí & Na čtvrtou \\ \hline \hline
+    1 & 1 & 1 & 1 \\ \hline
+    2 & 4 & 8 & 16 \\ \hline
+    3 & 9 & 27 & 81 \\ \hline
+    \textit{A} & \textit{A}*\textit{A} & \textit{A}*\textit{A}*\textit{A} & \textit{A}*\textit{A}*\textit{A}*\textit{A} \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Vkládání obrázků}
+
+Na prvním obrázku vidíte jak v LaTeXu vypadá zobrazený \textbf{png} obrázek pomocí příkazu \textit{includegraphics} \ref{fig:obrpng}.
+
+Na druhém obrázku lze naopak vidět jak v LaTeXu vypadá zobrazený vektorový \textbf{pdf} obrázek rovněž pomocí příkazu \textit{includegraphics} \ref{fig:obrpdf}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4,natwidth=400,natheight=400]{preview.png}
+\caption{Jednoduchý \textbf{png} obrázek}
+\label{fig:obrpng}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4,natwidth=400,natheight=400]{preview.pdf}
+\caption{Vektorový \textbf{pdf} obrázek}
+\label{fig:obrpdf}
+\end{figure}
+
+
+\section{Závěr}
+Toto byla demonstrace základních možností programu \LaTeX . Máme zde však široké spektrum dalších atribut, přidáváním dodatečných knihoven lze dosáhnout prakticky čehokoliv, co by kdy mohlo být při tvorbě dokumentu potřeba.
+
+\begin{thebibliography}{100}
+
+	\bibitem{LaTeX} OETIKER, Tobias. Ne příliš stručný úvod do systému LATEX 2e: LATEX 2e v 73 minutách. Bern, NAKL, 25. 1. 1996. ISBN
+
+	\bibitem{Bubble} Bubble sort - Algoritmy.net. [online]. [cit. 2014-05-22]. Dostupné z: http://www.algoritmy.net/article/3/Bubble-sort 
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,14 @@
+1)COMPILE
+To compile the program use: "make compile"
+
+2)CREATE DOCUMENTATION
+To create documentation use: "make doc"
+
+3)COMPILE AND CREATE DOCUMENTATION
+To compile the program and create documentation use: "make all"
+
+4)RUN THE PROGRAM
+To run the program use: "make run"
+
+5)COMPILED FILES AND DOCUMENTATION REMOVAL
+To remove documentation and all output filess use: "make clean"
